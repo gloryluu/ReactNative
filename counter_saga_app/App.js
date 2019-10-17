@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 
 //Redux
-import { createStore, applyMiddleware } from 'redux';
+import store from './src/store';
 import { Provider } from 'react-redux';
-import allReducer from './reducers';
 
-import Counter from './components/counter-page';
-
-let store = createStore(
-  allReducer
-)
+import Counter from './src/components/counter-page';
 
 export default class App extends Component {
   render() {
