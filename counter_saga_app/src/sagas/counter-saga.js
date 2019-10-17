@@ -1,5 +1,4 @@
 import { INCREASE_ASYNC, INCREASE, DECREASE, DECREASE_ASYNC } from "../actions/action-types";
-import { counterIncrease } from '../actions'
 
 import { takeLatest, takeEvery, throttle, put, cancel, fork, take, delay } from 'redux-saga/effects';
 
@@ -16,10 +15,10 @@ function* decrementAsync() {
 
 // 2.1
 export function* watchIncrementAsync() {
-    yield takeEvery(INCREASE_ASYNC, incrementAsync);
+    yield takeLatest(INCREASE_ASYNC, incrementAsync);
 }
 
 // 2.1
 export function* watchDecrementAsync() {
-    yield takeEvery(DECREASE_ASYNC, decrementAsync);
+    yield takeLatest(DECREASE_ASYNC, decrementAsync);
 }
