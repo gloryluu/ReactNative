@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     SafeAreaView,
-    View,
+    ActivityIndicator,
     Text
 } from 'react-native';
 import { Button, Image } from 'react-native-elements';
@@ -21,6 +21,7 @@ class DogPage extends Component {
 
     componentDidMount() {
         console.log('componentDidMount');
+        this.requestADog()
     }
 
     render() {
@@ -36,6 +37,7 @@ class DogPage extends Component {
                 <Image
                     source={{ uri: this.props.dog }}
                     style={{ width: 200, height: 200 }}
+                    PlaceholderContent={<ActivityIndicator />}
                 />
             </SafeAreaView>
         );
